@@ -9,6 +9,31 @@
     margin: 5%;
 }
 
+@media only screen and (max-width: 768px) {
+
+    .cart-design {
+        grid-template: auto;
+    }
+
+    .design {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 5%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .cart-design {
+        grid-template: auto;
+    }
+
+    .design {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 5%;
+    }
+}
+
+
 .cart-design {
     border: 2px solid whitesmoke;
     border-radius: 5px;
