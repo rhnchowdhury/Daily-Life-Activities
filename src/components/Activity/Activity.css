@@ -6,14 +6,21 @@
 .design {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin: 5%;
+}
+
+.cart-design {
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+
 }
 
 .cart-re-design {
     display: flex;
 }
 
-.cart-design {
-    border: 2px solid tomato;
+.cart-margin {
+    margin-left: 5%;
 }
 
 .cart-img img {
@@ -36,6 +43,8 @@
     border-radius: 10px;
     align-items: center;
     justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 50px;
 
 }
 
