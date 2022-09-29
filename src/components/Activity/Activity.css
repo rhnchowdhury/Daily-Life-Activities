@@ -7,3 +7,94 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.cart-re-design {
+    display: flex;
+}
+
+.cart-design {
+    border: 2px solid tomato;
+}
+
+.cart-img img {
+    width: 95px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.decoration {
+    margin-left: 5%;
+}
+
+.name-design {
+    font-size: 18px;
+}
+
+.w-h-design {
+    display: flex;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.div {
+    margin-right: 10px;
+}
+
+.para-design {
+    margin-left: 15px;
+}
+
+.second-design {
+    display: flex;
+    gap: 20px;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 25%;
+}
+
+.div-design {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+}
+
+.div-design:hover {
+    background-color: blueviolet;
+}
+
+.div-re-design {
+    background-color: palevioletred;
+}
+
+.routine {
+    margin-top: 10%;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.break {
+    margin-top: 15px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.btn-decorate {
+    width: 100%;
+    padding: 18px;
+    margin-top: 40px;
+    background-color: palevioletred;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+
+}
