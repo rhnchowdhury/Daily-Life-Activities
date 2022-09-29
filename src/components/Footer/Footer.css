@@ -1,0 +1,19 @@
+.accordion {
+    background-color: rgb(252, 218, 224);
+    padding: 15px;
+}
+
+.ques-design {
+    margin-left: 30%;
+    font-size: 45px;
+}
+
+.accordion-design {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.accordion-p {
+    font-size: 20px;
+    font-weight: 400;
+}
