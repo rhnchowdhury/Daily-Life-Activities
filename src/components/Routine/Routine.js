@@ -1,12 +1,12 @@
 import React from 'react';
 import './Routine.css'
 const Routine = (props) => {
-    const { name, picture, age, time } = props.active;
+    const { name, picture, details, time } = props.active;
     return (
         <div className='activity-design'>
-            <img src={picture} alt="" />
-            <h1>this is me:{name}</h1>
-            <p>Age:{age}</p>
+            <div className='img-design'><img src={picture} alt="" /></div>
+            <h3>{name}</h3>
+            <p>{details}</p>
             <p>Time: {time}</p>
         </div>
     );

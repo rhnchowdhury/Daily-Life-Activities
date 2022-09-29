@@ -1,12 +1,17 @@
+.activity-design {
+    width: 320px;
+    height: 540px;
+    border: 2px solid red;
+    border-radius: 8px;
+    margin-top: 30%;
+}
+
 .activity-design img {
     width: 100%;
     height: 150px;
-
+    border-radius: 10px;
 }
 
-.activity-design {
-    width: 300px;
-    height: 540px;
-    border: 2px solid red;
-    border-radius: 5px;
+.img-design {
+    margin: 15px;
 }
