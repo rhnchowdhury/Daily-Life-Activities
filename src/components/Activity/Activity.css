@@ -9,27 +9,39 @@
     margin: 5%;
 }
 
+/*******   Responsive part   *****/
+
 @media only screen and (max-width: 768px) {
 
-    .cart-design {
+    /* For tablet devices */
+    .activity-container {
         display: block;
     }
 
     .design {
         grid-template-columns: repeat(2, 1fr);
+        margin-left: 15%;
+    }
+
+    .cart-margin {
         margin: 5%;
     }
 }
 
 @media only screen and (max-width: 480px) {
 
-    .cart-design {
-        grid-template: auto;
+    /* For mobile device */
+    .activity-container {
+        display: block;
     }
 
     .design {
         grid-template-columns: repeat(1, 1fr);
-        margin: 5%;
+        margin-left: 24%;
+    }
+
+    .cart-margin {
+        margin: 3%;
     }
 }
 

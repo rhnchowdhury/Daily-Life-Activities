@@ -7,23 +7,33 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Activity = () => {
     const [activities, setActivities] = useState([]);
-    const [showtime, setTime] = useState(0)
-
+    const [showtime, setTime] = useState(0);
+    const [show, setShow] = useState(0);
 
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setActivities(data))
-    }, []);
+    }, [])
 
+    useEffect(() => {
+        const show = localStorage.getItem('time');
+        setShow(show);
+    }, [])
 
+    function brkShow(time) {
+        localStorage.setItem("time", time);
+        setShow(time)
+    }
 
     /****   Toast part   ******/
+
     const showToastMessage = () => {
         toast.success('Congratulations !! You have completed your activity', {
             position: toast.POSITION.TOP_CENTER
         });
     };
+
 
     return (
         <div className='activity-container'>
@@ -34,8 +44,6 @@ const Activity = () => {
                         active={active}
                         setTime={setTime}
                         showtime={showtime}
-
-                    // handleClick={handleClick}
                     ></Routine>)
                 }
             </div>
@@ -67,24 +75,24 @@ const Activity = () => {
                     <h4>Add A Break</h4>
                     <div className='second-design'>
                         <div>
-                            <p className='div-design'>10s</p>
+                            <p onClick={() => brkShow(10)} className='div-design'>10s</p>
                         </div>
                         <div>
-                            <p className='div-design'>20s</p>
+                            <p onClick={() => brkShow(20)} className='div-design'>20s</p>
                         </div>
                         <div>
-                            <p className='div-design div-re-design'>30s</p>
+                            <p onClick={() => brkShow(30)} className='div-design div-re-design'>30s</p>
                         </div>
                         <div>
-                            <p className='div-design'>40s</p>
+                            <p onClick={() => brkShow(40)} className='div-design'>40s</p>
                         </div>
                         <div>
-                            <p className='div-design'>50s</p>
+                            <p onClick={() => brkShow(50)} className='div-design'>50s</p>
                         </div>
                     </div>
                     <h4 className='rtn-details'>Routine Details</h4>
                     <div className='routine'>Routine Time: {showtime} </div>
-                    <div className='break'>Break Time:{ } </div>
+                    <div className='break'>Break Time: {show} </div>
                     <button onClick={showToastMessage} className='btn-decorate'>Activity Completed</button><ToastContainer />
                 </div>
             </div>

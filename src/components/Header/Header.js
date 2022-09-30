@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className='navigator'>
             <img className='image-design' src={logo} alt="" />
-            <h1 className='head-design'>FitProCentre</h1>
+            <h1 className='head-design'>SimpleLifeWay</h1>
         </nav>
     );
 };
