@@ -46,6 +46,8 @@
 
 .cart-margin {
     margin-left: 5%;
+    position: sticky;
+    top: 0;
 }
 
 .cart-img img {

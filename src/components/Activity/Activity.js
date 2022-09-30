@@ -2,14 +2,50 @@ import React, { useEffect, useState } from 'react';
 import Routine from '../Routine/Routine';
 import './Activity.css';
 import img from '../../images/img1.jpg'
+// import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Activity = () => {
-    const [activities, setActivities] = useState([])
+    const [activities, setActivities] = useState([]);
+    const [time, setTime] = useState([])
+    const [sec, setSec] = useState([])
 
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setActivities(data))
-    }, [])
+    }, []);
+
+    const handleClick = (active) => {
+        const newTime = [...time, active]
+        setTime(newTime);
+        // const { newTime } = active;
+        // console.log(newTime)
+
+        const { kt } = active.props;
+        // console.log(t)
+        let total = 0;
+        for (const tmi of kt) {
+            console.log(tmi)
+            total = total + tmi.time
+        }
+    }
+
+    const handleSec = (active) => {
+        console.log(active.value)
+        const newSec = [...sec, active]
+        setSec(newSec)
+        // const { newTime } = active;
+        // console.log(newTime)
+    }
+
+    /****   Toast part   ******/
+    const showToastMessage = () => {
+        toast.success('Congratulations !! You have completed your activity', {
+            position: toast.POSITION.TOP_CENTER
+        });
+    };
+
     return (
         <div className='activity-container'>
             <div className='design'>
@@ -17,6 +53,7 @@ const Activity = () => {
                     activities.map(active => <Routine
                         key={active.id}
                         active={active}
+                        handleClick={handleClick}
                     ></Routine>)
                 }
             </div>
@@ -48,7 +85,7 @@ const Activity = () => {
                     <h4>Add A Break</h4>
                     <div className='second-design'>
                         <div>
-                            <p className='div-design'>10s</p>
+                            <p onClick={handleSec} className='div-design'>10s</p>
                         </div>
                         <div>
                             <p className='div-design'>20s</p>
@@ -64,9 +101,9 @@ const Activity = () => {
                         </div>
                     </div>
                     <h4 className='rtn-details'>Routine Details</h4>
-                    <div className='routine'>Routine Time: </div>
-                    <div className='break'>Break Time: </div>
-                    <button className='btn-decorate'>Activity Completed</button>
+                    <div className='routine'>Routine Time:{time.length} </div>
+                    <div className='break'>Break Time:{sec.length} </div>
+                    <button onClick={showToastMessage} className='btn-decorate'>Activity Completed</button><ToastContainer />
                 </div>
             </div>
         </div >

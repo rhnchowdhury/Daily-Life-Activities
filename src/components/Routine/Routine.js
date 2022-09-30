@@ -10,7 +10,7 @@ const Routine = (props) => {
                 <p>{details}</p>
                 <p>Time: <strong>{time}</strong> minutes</p>
             </div>
-            <button className='btn-design'>
+            <button onClick={() => props.handleClick(props.active)} className='btn-design'>
                 <p className='p-design'>Add to list</p>
             </button>
         </div>
